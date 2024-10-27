@@ -12,8 +12,11 @@ return new class extends Migration
     public function up(): void
     {
         Schema::create('addsalaries', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->string('id')->primary(); // ID como varchar y clave primaria
+            $table->string('id_empleado'); // ID del empleado como varchar
+            $table->string('salario'); // Salario como varchar
+            $table->string('tiempo_pago'); // Duración de pago como varchar
+            $table->timestamps(); // Marcas de tiempo created_at y updated_at
         });
     }
 
